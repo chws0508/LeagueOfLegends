@@ -1,9 +1,12 @@
 package com.example.leagueoflegends
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import com.example.leagueoflegends.databinding.ActivityMainBinding
 import kotlinx.coroutines.*
@@ -14,6 +17,7 @@ import retrofit2.Response
 import java.io.IOException
 import java.lang.Exception
 import java.net.SocketTimeoutException
+import java.net.URL
 import java.nio.channels.Channel
 
 class MainActivity : AppCompatActivity() {
@@ -31,9 +35,6 @@ class MainActivity : AppCompatActivity() {
         }
         liveText.value="ChampionList"
 
-        liveText.observe(this){
-            liveText.value=it
-        }
 
 
 
