@@ -14,14 +14,14 @@ object RetrofitBuilder {
 
     init {
         val okHttpClient= OkHttpClient.Builder()
-            .readTimeout(10, TimeUnit.SECONDS)
-            .connectTimeout(10, TimeUnit.SECONDS)
-            .writeTimeout(15, TimeUnit.SECONDS)
+            .readTimeout(20, TimeUnit.SECONDS)
+            .connectTimeout(20, TimeUnit.SECONDS)
+            .writeTimeout(20, TimeUnit.SECONDS)
             .addInterceptor(getLoggingInterceptor())
             .build()
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://love-calculator.p.rapidapi.com/")
+            .baseUrl("https://league-of-legends-champions.p.rapidapi.com/")
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
